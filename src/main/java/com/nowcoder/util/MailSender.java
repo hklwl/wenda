@@ -27,7 +27,7 @@ public class MailSender implements InitializingBean {
     public boolean sendWithHTMLTemplate(String to, String subject,
                                         String template, Map<String, Object> model) {
         try {
-            String nick = MimeUtility.encodeText("hzcforever");
+            String nick = MimeUtility.encodeText("hustlwl");
             InternetAddress from = new InternetAddress(nick + "<2589656897@qq.com>");
             MimeMessage mimeMessage = mailSender.createMimeMessage();
             MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage);
