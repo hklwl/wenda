@@ -19,37 +19,6 @@ public class JedisAdapter implements InitializingBean {
 
     private JedisPool pool;
 
-    public static void print(int index, Object obj) {
-        System.out.println(String.format("%d, %s", index, obj.toString()));
-    }
-    public static void main(String[] args) {
-        Jedis jedis = new Jedis("redis://127.0.0.1:6379/1");
-//        jedis.flushDB();
-//        jedis.set("hello", "world");
-        print(1, jedis.get("hello"));
-//        jedis.setex("bye", 10, "vanish");
-//        print(2, jedis.get("bye"));
-
-        jedis.set("pv", "100");
-        jedis.incr("pv");
-        print(3, jedis.get("pv"));
-        jedis.incrBy("pv", 100);
-        jedis.decrBy("pv", 50);
-        print(3, jedis.get("pv"));
-
-        print(4, jedis.keys("*"));
-
-        String listName = "list";
-        jedis.del(listName);
-        for (int i = 0; i < 10; i++) {
-            jedis.lpush(listName, "a" + String.valueOf(i));
-        }
-        print(4, jedis.lrange(listName, 0, 3));
-        print(5, jedis.llen(listName));
-        print(6, jedis.lpop(listName));
-        print(7, jedis.lrange(listName, 0, 10));
-        print(8, jedis.lindex(listName, 2));
-    }
 
     @Override
     public void afterPropertiesSet() throws Exception {
