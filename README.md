@@ -13,7 +13,7 @@
 ## 4.异步队列<br>
 为了提高网站响应效果，利用redis的list实现了异步队列利用lpush向队列中加入事件，brpop从队列中取出事件处理<br>
 ## 5.粉丝与关注列表<br>
-利用redis的sortedlist实现粉丝与关注列表，权值为关注的时间<br>
+利用redis的sorted 实现粉丝与关注列表，权值为关注的时间<br>
 粉丝列表key为entitytype+entityid，value为userid<br>
 关注列表key为userid+entitytype，value为entityid<br>
 ## 6.赞与踩<br>
